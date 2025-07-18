@@ -1,9 +1,4 @@
-import React, { useState } from "react";
 import styled from "styled-components";
-import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
-
-
-
 const Nav = styled.nav`
   width: 100%;
   padding: 20px 80px;
@@ -35,6 +30,30 @@ const LogoSection = styled.div`
     @media (max-width: 480px) {
       height: 30px;
     }
+  }
+`;
+const LogoText = styled.h1`
+  font-size: 32px;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #00ffae, #00c5a1, #00ffae);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+  text-transform: uppercase;
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  @keyframes shine {
+    0% { background-position: 0% }
+    100% { background-position: 200% }
   }
 `;
 
@@ -150,73 +169,9 @@ const MobileMenu = styled.ul`
     }
   }
 `;
-const LogoText = styled.h1`
-  font-size: 32px;
-  font-weight: 900;
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 4px;
-  background: linear-gradient(90deg, #00ffae, #00c5a1, #00ffae);
-  background-size: 200%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  animation: shine 4s linear infinite;
-  text-transform: uppercase;
-
-  @media (max-width: 480px) {
-    font-size: 24px;
-    letter-spacing: 2px;
-  }
-
-  @keyframes shine {
-    0% { background-position: 0% }
-    100% { background-position: 200% }
-  }
-`;
-
-
-
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  return (
-    <>
-    <Nav>
-       <LogoSection>
-    <LogoText>SAMAN</LogoText>
-  </LogoSection>
-
-        <NavLinks>
-        <li><a href="#home">HOME</a></li>
-  <li><a href="#about">ABOUT</a></li>
-  <li><a href="#experience">EXPERIENCE</a></li>
-  <li><a href="#portfolio">PORTFOLIO</a></li>
-        </NavLinks>
-
-        <RightIcons>
-          <div className="search">
-            <FaSearch />
-            <span>Search</span>
-          </div>
-          <div
-            className="hamburger"
-            onClick={() => setMenuOpen((prev) => !prev)}
-          >
-            {menuOpen ? <FaTimes /> : <FaBars />}
-          </div>
-        </RightIcons>
-      </Nav>
-
-      <MobileMenu isOpen={menuOpen}>
-        <li onClick={() => setMenuOpen(false)}><li><a href="#home">HOME</a></li></li>
-        <li onClick={() => setMenuOpen(false)}><li><a href="#about">ABOUT</a></li></li>
-        <li onClick={() => setMenuOpen(false)}><li><a href="#experience">EXPERIENCE</a></li></li>
-        <li onClick={() => setMenuOpen(false)}><li><a href="#portfolio">PORTFOLIO</a></li></li>
-        
-      </MobileMenu>
-    </>
-  );
-};
-
-export default Navbar;
+export {Nav,
+  LogoSection,
+   NavLinks,
+   RightIcons,
+   MobileMenu,
+   LogoText  };

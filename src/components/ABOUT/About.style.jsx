@@ -1,6 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-import pic1 from "../assets/pic1.jpg";
 
 const Aboutsection = styled.section`
   background-color: #0d0d0d;
@@ -8,7 +6,7 @@ const Aboutsection = styled.section`
   padding: 100px 8% 80px;
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   gap: 60px;
   flex-wrap: wrap;
 
@@ -18,7 +16,6 @@ const Aboutsection = styled.section`
     padding: 60px 6% 60px;
   }
 `;
-
 
 const Left = styled.div`
   position: relative;
@@ -78,7 +75,6 @@ const Right = styled.div`
     text-align: center;
   }
 `;
-
 
 const Title = styled.h2`
   font-size: 34px;
@@ -171,8 +167,6 @@ const Button = styled.button`
   }
 `;
 
-
-
 const IconBox = styled.div`
   background-color: #fff;
   color: #00ffae;
@@ -192,7 +186,6 @@ const IconBox = styled.div`
   }
 `;
 
-
 const Divider = styled.div`
   width: 100%;
   height: 30px;
@@ -201,39 +194,15 @@ const Divider = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 `;
 
-const About = () => {
-  return (
-    <Aboutsection id="about">
-      <Left>
-        <img src={pic1} alt="About" />
-        <div className="play-button" />
-      </Left>
-      <Right>
-        <Title>
-          <Line>DESIGNING INTERFACES THAT BRING</Line>
-          <Line>
-            <span>VISIONS TO LIFE</span>
-          </Line>
-        </Title>
-        <Description>
-          I'm a Frontend Developer with a passion for creating clean,
-          responsive, and interactive web interfaces using React, HTML, CSS,
-          JavaScript, and Tailwind CSS. I help businesses and individuals build
-          a strong online presence with user-focused websites that not only look
-          great but also perform flawlessly across all devices.
-        </Description>
-        <ButtonRow>
-          <a href="/SAMAN_CV.pdf" download style={{ textDecoration: "none" }}>
-            <Button>
-              DOWNLOAD CV
-              <IconBox>➤</IconBox>
-            </Button>
-          </a>
-        </ButtonRow>
-      </Right>
-      <Divider />
-    </Aboutsection>
-  );
+export {
+  Aboutsection,
+  Left,
+  Right,
+  Title,
+  Line,
+  Description,
+  ButtonRow,
+  Button,
+  IconBox,
+  Divider,
 };
-
-export default About;
